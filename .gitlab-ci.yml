@@ -1,0 +1,11 @@
+---
+stages:
+   - build
+  
+build-classes-jacoco:
+   stage: build
+   script:
+     - mvn clean test
+   tags:
+      - ci  
+    

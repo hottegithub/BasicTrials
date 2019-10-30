@@ -24,12 +24,12 @@ public class Fib {
 	        for (int i = 2; i < n; ++i)
 	        {
 	        	arr[i] = arr[i - 1] + arr[i - 2]; 
-	        	System.out.println(i +"th element is >>"+arr[i]);
+	        	//System.out.println(i +"th element is >>"+arr[i]);
 	        }
 
-	        System.out.println(" ++++++++++++++++++++++++++++++++yyy");
+	        //System.out.println(" ++++++++++++++++++++++++++++++++yyy");
 	        returnStr = Arrays.toString(arr);
-	        System.out.println("returnStr >>>"+returnStr);
+	        //System.out.println("returnStr >>>"+returnStr);
 	        
 		return Arrays.toString(arr);
 	}
