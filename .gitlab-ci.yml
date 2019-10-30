@@ -5,7 +5,7 @@ stages:
 build-classes-jacoco:
    stage: build
    script:
-     - mvn clean test
+     - $MAVEN_HOME/bin/mvn clean test
    tags:
       - ci  
     
