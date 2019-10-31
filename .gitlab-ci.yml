@@ -11,8 +11,6 @@ stages:
 build-classes-jacoco:
    stage: build
    script:
-     - printenv M2
-     - printenv M2_HOME      
      - mvn $MAVEN_CLI_OPTS compile
    tags:
       - ci
