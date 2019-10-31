@@ -15,5 +15,6 @@ build-classes-jacoco:
      - printenv M2_HOME      
      - mvn $MAVEN_CLI_OPTS compile
    tags:
-      - ci  
+      - ci
+      - ssh  
     
