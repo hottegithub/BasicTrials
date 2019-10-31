@@ -12,6 +12,8 @@ build-classes-jacoco:
    stage: build
    script:
      - $env:Path 
+     - $env:M2
+     - $env:M2_HOME
      - mvn $MAVEN_CLI_OPTS compile
    tags:
       - ci
