@@ -13,7 +13,7 @@ build-classes-jacoco:
      - $env:M2
      - $env:M2_HOME
      - $env:JAVA_HOME
-     - mvn compile
+     - mvn clean test
    tags:
       - ci
       - ssh  
