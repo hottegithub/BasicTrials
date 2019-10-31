@@ -11,6 +11,7 @@ stages:
 build-classes-jacoco:
    stage: build
    script:
+     - SET 
      - mvn $MAVEN_CLI_OPTS compile
    tags:
       - ci
