@@ -13,7 +13,7 @@ build-classes-jacoco:
      - $env:JAVA_HOME
      - mvn clean test
      - docker --version
-     
+     - copy-item -path /target/jacoco.exec -destination d:\\Mahendra
    tags:
       - ci
       - ssh  
