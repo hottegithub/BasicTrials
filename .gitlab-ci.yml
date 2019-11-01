@@ -18,7 +18,7 @@ build-classes-jacoco-job:
   stage: build
   artifacts:
     paths:
-      - jacoco.exe
+      - $SOURCE/jacoco.exec
   tags: 
     - ci
     - ssh
