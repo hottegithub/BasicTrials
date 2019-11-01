@@ -16,6 +16,9 @@ build-classes-jacoco-job:
     - "echo $SOURCE"
     - "mvn clean test"
   stage: build
+  artifacts:
+    paths:
+      - jacoco.exe
   tags: 
     - ci
     - ssh
