@@ -13,7 +13,7 @@ build-classes-jacoco:
      - $env:JAVA_HOME
      - mvn clean test
      - docker --version
-     - cp 
+     
    tags:
       - ci
       - ssh  
