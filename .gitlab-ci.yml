@@ -1,5 +1,14 @@
 ---
 image: maven:latest
+
+before_script:
+  - echo ${CF_ACCESS_TOKEN:?is not specified} > /null
+  - echo ${CF_REFRESH_TOKEN:?is not specified} > /null
+  - echo ${SONAR_HOST:?is not specified} > /null
+  - echo ${SONAR_LOGIN:?is not specified} > /null
+  - echo ${CF_ORG:?is not specified} > /null
+  - echo ${CF_SPACE:?is not specified} > /null
+  - echo ${CF_API:?is not specified} > /null
   
 stages:
    - build
