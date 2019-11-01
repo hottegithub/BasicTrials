@@ -5,8 +5,10 @@ variables:
 
 stages:
    - build
+   - deploy
+   - build_docker_image
   
-build-classes-jacoco:
+build-classes-jacoco-job:
    stage: build
    script:
      - $env:Path 
@@ -15,9 +17,14 @@ build-classes-jacoco:
      - $env:JAVA_HOME
      - echo $SOURCE
      - mvn clean test
-     - docker --version
-     - copy-item -path $SOURCE/jacoco.exec -destination d:\\Mahendra
    tags:
       - ci
       - ssh  
-    
+deploy-to-server-job:
+    stage: deploy
+    script:
+      - copy-item -path $SOURCE/jacoco.exec -destination d:\\Mahendra
+      
+docker_image-job:
+    stage: build_docker_image
+    script: - docker --version   
