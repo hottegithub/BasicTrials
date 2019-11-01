@@ -1,38 +1,35 @@
 ---
-image: maven:latest
-variables:
-  SOURCE: "target"
-
-stages:
-   - build
-   - deploy
-   - build_docker_image
-  
-build-classes-jacoco-job:
-   stage: build
-   script:
-     - $env:Path 
-     - $env:M2
-     - $env:M2_HOME
-     - $env:JAVA_HOME
-     - echo $SOURCE
-     - mvn clean test
-   tags:
-      - ci
-      - ssh
-        
-deploy-to-server-job:
-    stage: deploy
-    script:
-      - copy-item -path $SOURCE/jacoco.exec -destination d:\\Mahendra
-   tags:
-      - ci
-      - ssh
-                 
-docker_image-job:
-    stage: build_docker_image
-    script: 
-      - docker --version  
-   tags:
-      - ci
-      - ssh
+image: "maven:latest"
+stages: 
+  - build
+  - deploy
+  - build_docker_image
+variables: 
+  SOURCE: target
+ 
+build-classes-jacoco-job: 
+  script: 
+    - "$env:Path"
+    - "$env:M2"
+    - "$env:M2_HOME"
+    - "$env:JAVA_HOME"
+    - "echo $SOURCE"
+    - "mvn clean test"
+  stage: build
+  tags: 
+    - ci
+    - ssh
+deploy-to-server-job: 
+  script: 
+    - "copy-item -path $SOURCE/jacoco.exec -destination d:\\\\Mahendra"
+  stage: deploy
+  tags: 
+    - ci
+    - ssh
+docker_image-job: 
+  script: 
+    - "docker --version"
+  stage: build_docker_image
+  tags: 
+    - ci
+    - ssh
