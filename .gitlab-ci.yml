@@ -1,7 +1,7 @@
 ---
 image: maven:latest
 variables:
-  SOURCE: "\target"
+  SOURCE: "target"
 
 stages:
    - build
@@ -14,7 +14,7 @@ build-classes-jacoco:
      - $env:M2_HOME
      - $env:JAVA_HOME
      #- mvn clean test
-     - echo $
+     - echo $SOURCE
      - docker --version
      - copy-item -path $SOURCE/jacoco.exec -destination d:\\Mahendra
    tags:
