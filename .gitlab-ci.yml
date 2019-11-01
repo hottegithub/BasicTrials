@@ -1,7 +1,5 @@
 ---
 image: maven:latest
-
-
   
 stages:
    - build
@@ -13,7 +11,8 @@ build-classes-jacoco:
      - $env:M2
      - $env:M2_HOME
      - $env:JAVA_HOME
-     - mvn clean test
+     #- mvn clean test
+     - docker --version
    tags:
       - ci
       - ssh  
