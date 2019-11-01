@@ -19,18 +19,14 @@ build-classes-jacoco-job:
      - mvn clean test
    tags:
       - ci
-      - ssh  
+      - ssh
+        
 deploy-to-server-job:
     stage: deploy
     script:
       - copy-item -path $SOURCE/jacoco.exec -destination d:\\Mahendra
-    tags:
-      - ci
-      - ssh
-            
+           
 docker_image-job:
     stage: build_docker_image
-    script: - docker --version  
-    tags:
-      - ci
-      - ssh 
+    script: 
+      - docker --version  
